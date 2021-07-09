@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/92d29d1539.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-app-wrap">
+        <div class="weather-app">
+          <form class="search-form" id="search">
+            <div class="row">
+              <div class="col-6">
+                <input
+                  class="search-input form-control btn btn-light shadow"
+                  id="search-input"
+                  type="search"
+                  placeholder="Enter city name i.e. Paris"
+                  autofocus="on"
+                />
+              </div>
+
+              <div class="col-3">
+                <input
+                  class="search-button form-control btn btn-light shadow"
+                  id="search-button"
+                  type="submit"
+                  value="Search"
+                />
+              </div>
+
+              <div class="col-3">
+                <button
+                  class="current-button form-control btn btn-light shadow"
+                  id="current-button"
+                  type="button"
+                >
+                  <i class="fas fa-search-location"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <div class="row">
+            <div class="col-4">
+              <ul>
+                <li class="city-name">
+                  <h4 id="city-name"></h4>
+                </li>
+                <li class="day-time" id="day-time"></li>
+                <li class="description" id="description"></li>
+              </ul>
+            </div>
+
+            <div class="col-4">
+              <ul class="current-weather">
+                <li>
+                  <img class="current-icon" id="current-icon" src="#" />
+                </li>
+                <li>
+                  <span class="current-temperature" id="current-temperature">
+                  </span>
+                  <span class="temp-display">
+                    <a href="#" id="celsius" class="active"> °C </a> |
+                    <a href="#" id="fahrenheit"> °F </a>
+                  </span>
+                </li>
+                <li class="feels-like" id="feels-like">
+                  Feels like <span id="feel-temperature"> </span>°C
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-4">
+              <ul class="weather-specifics">
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
+              </ul>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <ul class="day-one">
+                  <li>
+                    <h6 class="week-day"></h6>
+                  </li>
+                  <li>
+                    <img class="weather-icon" src="#" />
+                  </li>
+                  <li>
+                    <h5 class="day-temperature">
+                      <span id="day-temperature"> </span> °C
+                    </h5>
+                  </li>
+                  <li>
+                    <span class="day-description" id="day-description"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <ul class="day-two">
+                  <li>
+                    <h6 class="week-day"></h6>
+                  </li>
+                  <li>
+                    <img class="weather-icon" src="#" />
+                  </li>
+                  <li>
+                    <h5 class="day-temperature">
+                      <span id="day-temperature"> </span> °C
+                    </h5>
+                  </li>
+                  <li>
+                    <span class="day-description" id="day-description"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <ul class="day-three">
+                  <li>
+                    <h6 class="week-day"></h6>
+                  </li>
+                  <li>
+                    <img class="weather-icon" src="#" />
+                  </li>
+                  <li>
+                    <h5 class="day-temperature">
+                      <span id="day-temperature"> </span> °C
+                    </h5>
+                  </li>
+                  <li>
+                    <span class="day-description" id="day-description"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <ul class="day-four">
+                  <li>
+                    <h6 class="week-day"></h6>
+                  </li>
+                  <li>
+                    <img class="weather-icon" src="#" />
+                  </li>
+                  <li>
+                    <h5 class="day-temperature">
+                      <span id="day-temperature"> </span> °C
+                    </h5>
+                  </li>
+                  <li>
+                    <span class="day-description" id="day-description"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <ul class="day-five">
+                  <li>
+                    <h6 class="week-day"></h6>
+                  </li>
+                  <li>
+                    <img class="weather-icon" src="#" />
+                  </li>
+                  <li>
+                    <h5 class="day-temperature">
+                      <span id="day-temperature"> </span> °C
+                    </h5>
+                  </li>
+                  <li>
+                    <span class="day-description" id="day-description"></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <small>
+          <a href="https://github.com/ataa-pa/Week-7" target="_blank">
+            Open-source code
+          </a>
+          by Parvin Ata
+        </small>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
