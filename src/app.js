@@ -45,6 +45,9 @@ function displayTemperature(response) {
   celsiusTemperature = response.data.main.temp;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
+  let feelsLikeElement = document.querySelector("#feel-temperature");
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
 

@@ -61,7 +61,7 @@
 
           <div class="row">
             <div class="col-4">
-              <ul>
+              <ul class="current-city">
                 <li class="city-name">
                   <h4 id="city-name"></h4>
                 </li>
@@ -98,116 +98,172 @@
           </div>
 
           <hr />
-
-          <div class="row">
-            <div class="col">
-              <div class="card">
-                <ul class="day-one">
-                  <li>
-                    <h6 class="week-day"></h6>
-                  </li>
-                  <li>
-                    <img class="weather-icon" src="#" />
-                  </li>
-                  <li>
-                    <h5 class="day-temperature">
-                      <span id="day-temperature"> </span> °C
-                    </h5>
-                  </li>
-                  <li>
-                    <span class="day-description" id="day-description"></span>
-                  </li>
-                </ul>
+          <div class="forecast">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <ul class="day-one">
+                    <li>
+                      <h6 class="week-day"></h6>
+                    </li>
+                    <li>
+                      <img class="weather-icon" src="#" />
+                    </li>
+                    <li>
+                      <h5 class="forecast-temperature">
+                        <span
+                          class="day-temperature-max"
+                          id="day-temperature-max"
+                        >
+                          °
+                        </span>
+                        <span
+                          class="day-temperature-min"
+                          id="day-temperature-min"
+                        >
+                          °
+                        </span>
+                      </h5>
+                    </li>
+                    <li>
+                      <span class="day-description" id="day-description"></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="col">
-              <div class="card">
-                <ul class="day-two">
-                  <li>
-                    <h6 class="week-day"></h6>
-                  </li>
-                  <li>
-                    <img class="weather-icon" src="#" />
-                  </li>
-                  <li>
-                    <h5 class="day-temperature">
-                      <span id="day-temperature"> </span> °C
-                    </h5>
-                  </li>
-                  <li>
-                    <span class="day-description" id="day-description"></span>
-                  </li>
-                </ul>
+              <div class="col">
+                <div class="card">
+                  <ul class="day-two">
+                    <li>
+                      <h6 class="week-day"></h6>
+                    </li>
+                    <li>
+                      <img class="weather-icon" src="#" />
+                    </li>
+                    <li>
+                      <h5 class="forecast-temperature">
+                        <span
+                          class="day-temperature-max"
+                          id="day-temperature-max"
+                        >
+                          °
+                        </span>
+                        <span
+                          class="day-temperature-min"
+                          id="day-temperature-min"
+                        >
+                          °
+                        </span>
+                      </h5>
+                    </li>
+                    <li>
+                      <span class="day-description" id="day-description"></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="col">
-              <div class="card">
-                <ul class="day-three">
-                  <li>
-                    <h6 class="week-day"></h6>
-                  </li>
-                  <li>
-                    <img class="weather-icon" src="#" />
-                  </li>
-                  <li>
-                    <h5 class="day-temperature">
-                      <span id="day-temperature"> </span> °C
-                    </h5>
-                  </li>
-                  <li>
-                    <span class="day-description" id="day-description"></span>
-                  </li>
-                </ul>
+              <div class="col">
+                <div class="card">
+                  <ul class="day-three">
+                    <li>
+                      <h6 class="week-day"></h6>
+                    </li>
+                    <li>
+                      <img class="weather-icon" src="#" />
+                    </li>
+                    <li>
+                      <h5 class="forecast-temperature">
+                        <span
+                          class="day-temperature-max"
+                          id="day-temperature-max"
+                        >
+                          °
+                        </span>
+                        <span
+                          class="day-temperature-min"
+                          id="day-temperature-min"
+                        >
+                          °
+                        </span>
+                      </h5>
+                    </li>
+                    <li>
+                      <span class="day-description" id="day-description"></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="col">
-              <div class="card">
-                <ul class="day-four">
-                  <li>
-                    <h6 class="week-day"></h6>
-                  </li>
-                  <li>
-                    <img class="weather-icon" src="#" />
-                  </li>
-                  <li>
-                    <h5 class="day-temperature">
-                      <span id="day-temperature"> </span> °C
-                    </h5>
-                  </li>
-                  <li>
-                    <span class="day-description" id="day-description"></span>
-                  </li>
-                </ul>
+              <div class="col">
+                <div class="card">
+                  <ul class="day-four">
+                    <li>
+                      <h6 class="week-day"></h6>
+                    </li>
+                    <li>
+                      <img class="weather-icon" src="#" />
+                    </li>
+                    <li>
+                      <h5 class="forecast-temperature">
+                        <span
+                          class="day-temperature-max"
+                          id="day-temperature-max"
+                        >
+                          °
+                        </span>
+                        <span
+                          class="day-temperature-min"
+                          id="day-temperature-min"
+                        >
+                          °
+                        </span>
+                      </h5>
+                    </li>
+                    <li>
+                      <span class="day-description" id="day-description"></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="col">
-              <div class="card">
-                <ul class="day-five">
-                  <li>
-                    <h6 class="week-day"></h6>
-                  </li>
-                  <li>
-                    <img class="weather-icon" src="#" />
-                  </li>
-                  <li>
-                    <h5 class="day-temperature">
-                      <span id="day-temperature"> </span> °C
-                    </h5>
-                  </li>
-                  <li>
-                    <span class="day-description" id="day-description"></span>
-                  </li>
-                </ul>
+              <div class="col">
+                <div class="card">
+                  <ul class="day-five">
+                    <li>
+                      <h6 class="week-day"></h6>
+                    </li>
+                    <li>
+                      <img class="weather-icon" src="#" />
+                    </li>
+                    <li>
+                      <h5 class="forecast-temperature">
+                        <span
+                          class="day-temperature-max"
+                          id="day-temperature-max"
+                        >
+                          °
+                        </span>
+                        <span
+                          class="day-temperature-min"
+                          id="day-temperature-min"
+                        >
+                          °
+                        </span>
+                      </h5>
+                    </li>
+                    <li>
+                      <span class="day-description" id="day-description"></span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <small>
-          <a href="https://github.com/ataa-pa/Week-7" target="_blank">
+          <a href="https://github.com/ataa-pa/Week-8" target="_blank">
             Open-source code
           </a>
           by Parvin Ata
