@@ -30,44 +30,40 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
-        <div class="col">
-                <div class="card">
-                  <ul class="day-one">
-                    <li>
-                      <h6 class="week-day">${day}</h6>
-                    </li>
-                    <li>
-                      <img class="weather-icon" src="#" />
-                    </li>
-                    <li>
-                      <h5 class="forecast-temperature">
-                        <span
-                          class="day-temperature-max"
-                          id="day-temperature-max"
-                        >
-                          °
-                        </span>
-                        <span
-                          class="day-temperature-min"
-                          id="day-temperature-min"
-                        >
-                          °
-                        </span>
-                      </h5>
-                    </li>
-                  </ul>
-                </div>
-                </div>
-`;
+            <div class="col">
+              <div class="card">
+                <ul>
+                  <li>
+                    <h6 class="forecast-day">${day}</h6>
+                  </li>
+                  <li>
+                    <img class="weather-icon" src="#" />
+                  </li>
+                  <li>
+                    <h5 class="forecast-temperature">
+                      <span class="forecast-temperature-max"> ° </span> 
+                      <span class="forecast-temperature-min"> ° </span> 
+                    </h5>
+                  </li>
+                </ul>
+              </div>
+            </div>`;
   });
 
-  forecastHTML = forecastHTML + `</div`;
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "cccb60e2b71b1ece226b8d97365fb946";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -143,6 +139,5 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertCelsius);
 
-displayForecast();
-
 search("Tokyo");
+displayForecast();

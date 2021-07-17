@@ -17,13 +17,17 @@ ul {
 li::first-letter {
   text-transform: capitalize;
 }
+hr {
+  opacity: 0.1;
+}
+
 .weather-app-wrap {
   max-width: 800px;
   margin: 30px auto;
 }
 
 .weather-app {
-  border: 1px solid #cccccc;
+  border: 1px solid #f1f1f1;
   border-radius: 5px;
   color: #6f6f6f;
   padding: 25px;
@@ -83,12 +87,15 @@ li::first-letter {
   padding: 0 2px;
   text-align: center;
 }
+.card {
+  border-color: #f1f1f1;
+}
 .forecast-temperature {
   font-size: 15px;
   margin: 15px 0 10px;
   text-align: center;
 }
-.week-day {
+.forecast-day {
   font-size: 12px;
   padding: 15px 0 0 0;
   text-align: center;
@@ -97,6 +104,6 @@ li::first-letter {
   margin-top: 20px;
   text-align: center;
 }
-.day-temperature-min {
+.forecast-temperature-min {
   opacity: 0.6;
 }
