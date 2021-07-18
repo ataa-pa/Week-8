@@ -20,6 +20,9 @@ li::first-letter {
 hr {
   opacity: 0.1;
 }
+small {
+  font-size: 12px;
+}
 
 .weather-app-wrap {
   max-width: 800px;
@@ -60,6 +63,10 @@ hr {
 .current-city {
   margin: 45px 0 0;
 }
+.feels-like {
+  font-size: 15px;
+  padding: 10px 0 0;
+}
 .weather-specifics {
   margin: 65px 0 0;
   position: relative;
@@ -67,7 +74,7 @@ hr {
 }
 .weather-icon {
   width: 75px;
-  margin: 10px auto;
+  margin: 0 auto;
 }
 .current-weather {
   text-align: center;
@@ -82,6 +89,16 @@ hr {
   line-height: 1;
   margin: 0 auto;
 }
+.celsius {
+  font-size: 20px;
+  position: relative;
+  top: -5px;
+}
+.feels-like-celsius {
+  position: relative;
+  top: -2px;
+  left: -5px;
+}
 .day-description {
   font-size: 11px;
   padding: 0 2px;
@@ -92,11 +109,12 @@ hr {
 }
 .forecast-temperature {
   font-size: 15px;
-  margin: 15px 0 10px;
+  margin: 5px 0 5px;
   text-align: center;
 }
 .forecast-day {
-  font-size: 12px;
+  font-size: 17px;
+  margin-bottom: 5px;
   padding: 15px 0 0 0;
   text-align: center;
 }
