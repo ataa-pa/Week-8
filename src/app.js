@@ -26,34 +26,49 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
 
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col">
               <div class="card">
                 <ul>
                   <li>
-                    <h6 class="forecast-day">${day}</h6>
+                    <h6 class="forecast-day">${formatDay(forecastDay.dt)}</h6>
                   </li>
                   <li>
-                    <img class="weather-icon" src="#" />
+                    <img class="weather-icon" src="https://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png" />
                   </li>
                   <li>
                     <h5 class="forecast-temperature">
-                      <span class="forecast-temperature-max"> ° </span> 
-                      <span class="forecast-temperature-min"> ° </span> 
+                      <span class="forecast-temperature-max"> ${Math.round(
+                        forecastDay.temp.max
+                      )}° </span> 
+                      <span class="forecast-temperature-min"> ${Math.round(
+                        forecastDay.temp.min
+                      )}° </span> 
                     </h5>
                   </li>
                 </ul>
               </div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -96,6 +111,8 @@ function displayTemperature(response) {
 
   let windElement = document.querySelector("#wind");
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -139,5 +156,4 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", convertCelsius);
 
-search("Tokyo");
-displayForecast();
+search("Kabul");
