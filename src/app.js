@@ -131,4 +131,21 @@ function searchSubmit(event) {
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", searchSubmit);
 
+function searchLocation(position) {
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let apiKey = "cccb60e2b71b1ece226b8d97365fb946";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let locationButton = document.querySelector("#current-button");
+locationButton.addEventListener("click", getLocation);
+
 search("Kabul");
